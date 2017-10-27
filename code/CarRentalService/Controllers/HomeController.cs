@@ -11,7 +11,6 @@ namespace CarRentalService.Controllers
 		public ActionResult Index()
 		{
 			ViewBag.Title = "Car Rental Service";
-
 			return View();
 		}
 	}

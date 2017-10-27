@@ -18,6 +18,14 @@ namespace CarRentalService
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+			//System.Data.Entity.Database.SetInitializer<Repository.MyDatabaseContext>(new Repository.DatabaseInitializer());
+			using (var context = new Repository.MyDatabaseContext())
+			{
+				context.Database.Initialize(force: true);
+			}
+			GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+			GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
 		}
 	}
 }
