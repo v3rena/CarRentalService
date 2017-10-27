@@ -19,11 +19,14 @@ namespace CarRentalService
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+			//Forces DB Delete and Drop after Model Change
 			//System.Data.Entity.Database.SetInitializer<Repository.MyDatabaseContext>(new Repository.DatabaseInitializer());
-			using (var context = new Repository.MyDatabaseContext())
+			/*using (var context = new Repository.MyDatabaseContext())
 			{
 				context.Database.Initialize(force: true);
-			}
+			}*/
+
+			//Only JSON no XML
 			GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 			GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
 		}

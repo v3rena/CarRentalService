@@ -20,9 +20,6 @@ namespace CarRentalService.Repository
 
 		public IEnumerable<Car> GetAll()
 		{
-			List<Car> list = db.Cars.ToList();
-
-
 			return db.Cars.ToList();
 		}
 
@@ -34,21 +31,6 @@ namespace CarRentalService.Repository
 			}
 			else
 			{
-				/*Car localCar = db.Cars.Find(car.ID);
-				db.Cars.Remove(localCar);
-				db.Cars.Add(localCar);
-				db.SaveChanges();
-				return true;*/
-
-				/*var cars = db.Cars.ToList();
-				int index = cars.FindIndex(c => c.ID == car.ID);
-				if (index == -1) { return false; }
-				cars.RemoveAt(index);*/
-
-				/*Car localCar = db.Cars.Find(car.ID);
-				db.SaveChanges();
-				return true;*/
-
 				var result = db.Cars.SingleOrDefault(b => b.ID == car.ID);
 				if (result != null)
 				{
@@ -63,7 +45,6 @@ namespace CarRentalService.Repository
 				}
 				return false;
 			}
-
 		}
 
 		public void AddCar(Car car)
