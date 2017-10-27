@@ -35,7 +35,7 @@ namespace CarRentalService.Repository
 				if (result != null)
 				{
 					result.CustomerID = car.CustomerID;
-					result.Customer = car.Customer;
+					//result.Customer = car.Customer;
 					result.IsAvailable = car.IsAvailable;
 					result.Model = car.Model;
 					result.Price = car.Price;

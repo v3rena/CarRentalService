@@ -20,11 +20,11 @@ namespace CarRentalService
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 			//Forces DB Delete and Drop after Model Change
-			//System.Data.Entity.Database.SetInitializer<Repository.MyDatabaseContext>(new Repository.DatabaseInitializer());
-			/*using (var context = new Repository.MyDatabaseContext())
+			System.Data.Entity.Database.SetInitializer<Repository.MyDatabaseContext>(new Repository.DatabaseInitializer());
+			using (var context = new Repository.MyDatabaseContext())
 			{
 				context.Database.Initialize(force: true);
-			}*/
+			}
 
 			//Only JSON no XML
 			GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
