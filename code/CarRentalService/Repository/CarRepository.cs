@@ -10,8 +10,7 @@ namespace CarRentalService.Repository
 	{
 		private MyDatabaseContext db = new MyDatabaseContext();
 
-		public CarRepository()
-		{ }
+		public CarRepository() { }
 
 		public Car Get(int id)
 		{

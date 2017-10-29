@@ -1,12 +1,8 @@
-# Introduction 
-CarRentalService provides a RESTful Webservice for Car Rental Systems.
+#Car Rental System
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Car Rental System contains two solutions:
+- CarRentalService, which provides a RESTful Webservice and is hosted on Azure (Url: http://carrentalservice2017.azurewebsites.net/)
+- CarRentalClient, which is a WPF Client for booking and returning cars
 
 # Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Both solutions were developed in Visual Studio 2017.

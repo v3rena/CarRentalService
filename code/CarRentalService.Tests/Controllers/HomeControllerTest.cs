@@ -19,7 +19,7 @@ namespace CarRentalService.Tests.Controllers
 
 			// Assert
 			Assert.IsNotNull(result);
-			Assert.AreEqual("Home Page", result.ViewBag.Title);
+			Assert.AreEqual("Car Rental Service", result.ViewBag.Title);
 		}
 	}
 }
